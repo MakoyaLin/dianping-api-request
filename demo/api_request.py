@@ -9,16 +9,10 @@ SECRET = ""
 
 def api_request(apiUrl, paramSet):
     #参数排序与拼接
-    paramMap = {}
-    for pair in paramSet:
-        paramMap[pair[0]] = pair[1]
-
     codec = APPKEY
-    for key in sorted(paramMap.iterkeys()):
-        codec += key + paramMap[key]
-
+    for pair in sorted(paramSet, key=lambda x:x[0]):
+        codec += pair[0] + pair[1]
     codec += SECRET
-
     #签名计算
     sign = (hashlib.sha1(codec).hexdigest()).upper()
 
@@ -26,13 +20,12 @@ def api_request(apiUrl, paramSet):
     url_trail = "appkey=" + APPKEY + "&sign=" + sign
     for pair in paramSet:
         url_trail += "&" + pair[0] + "=" + pair[1]
-
     requestUrl = apiUrl + "?" + url_trail
 
     #模拟请求
     response = urllib.urlopen(requestUrl)
-
     return response.read()
+
 
 if __name__ == '__main__':
     # get_batch_businesses_by_id
