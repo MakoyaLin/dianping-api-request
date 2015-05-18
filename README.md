@@ -11,7 +11,7 @@ Supported Api
 
 Example
 -------
-```
+```python
 >>> from dianping import DianpingApi
 >>> api = DianpingApi('app_key', 'app_secret')
 >>> cities = api.get_cities()
