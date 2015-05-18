@@ -87,11 +87,19 @@ class DianpingApi(object):
         data = {}
         data.update(kwargs)
         if category:
-            data['category'] = ','.join(category[:5])
+            if isinstance(category, list):
+                categories = ','.join(category[:5])
+            else:
+                categories = category
+            data['category'] = categories
         result = self.request('business/find_businesses', data)
         return result['businesses']
 
     def get_batch_businesses_by_id(self, business_ids):
-        data = {'business_ids': ','.join(business_ids[:40])}
+        if isinstance(business_ids, list):
+            _ids = ','.join(business_ids[:40])
+        else:
+            _ids = business_ids
+        data = {'business_ids': _ids}
         result = self.request('business/get_batch_businesses_by_id', data)
         return result['businesses']
