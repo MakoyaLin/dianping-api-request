@@ -27,7 +27,7 @@ if __name__ == '__main__':
         for category in categories:
             param['category'] = category
             businesses += api.find_businesses(**param)
-        break
+        #break
     #db.business.insert(businesses)
     for business in businesses:
         db.business.update({'business_id': business['business_id']}, {'$set': business}, upsert=True)
