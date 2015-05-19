@@ -1,16 +1,15 @@
 Dianping Python Api Demo
 ========================
 
-Supported Api
--------------
+## Supported Api
 * `get_cities`, [获取支持商户搜索的最新城市列表](http://developer.dianping.com/app/api/v1/metadata/get_cities_with_businesses)
 * `get_regions`, [获取支持商户搜索的最新城市下属区域列表](http://developer.dianping.com/app/api/v1/metadata/get_regions_with_businesses)
 * `get_categories`, [获取支持商户搜索的最新分类列表](http://developer.dianping.com/app/api/v1/metadata/get_categories_with_businesses)
 * `find_businesses`, [搜索商户](http://developer.dianping.com/app/api/v1/business/find_businesses)
 * `get_batch_businesses_by_id`, [批量获取指定商户信息](http://developer.dianping.com/app/api/v1/business/get_batch_businesses_by_id)
+* `get_recent_reviews`, [获取指定商户最新点评片断](http://developer.dianping.com/app/api/v1/review/get_recent_reviews)
 
-Example
--------
+## Example
 ```python
 >>> from dianping import DianpingApi
 >>> api = DianpingApi('app_key', 'app_secret')

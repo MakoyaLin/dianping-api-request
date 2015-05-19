@@ -103,3 +103,8 @@ class DianpingApi(object):
         data = {'business_ids': _ids}
         result = self.request('business/get_batch_businesses_by_id', data)
         return result['businesses']
+
+    def get_recent_reviews(self, business_id):
+        result = self.request(
+            'review/get_recent_reviews', {'business_id': business_id})
+        return result['reviews']
