@@ -108,8 +108,3 @@ class DianpingApi(object):
         result = self.request(
             'review/get_recent_reviews', {'business_id': business_id})
         return result['reviews']
-
-    def get_cities_with_businesses(self):
-        result = self.request(
-            'metadata/get_cities_with_businesses', {})
-        return result['cities']
