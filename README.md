@@ -8,6 +8,7 @@ Dianping Python Api Demo
 * `find_businesses`, [搜索商户](http://developer.dianping.com/app/api/v1/business/find_businesses)
 * `get_batch_businesses_by_id`, [批量获取指定商户信息](http://developer.dianping.com/app/api/v1/business/get_batch_businesses_by_id)
 * `get_recent_reviews`, [获取指定商户最新点评片断](http://developer.dianping.com/app/api/v1/review/get_recent_reviews)
+* `get_cities_with_businesses`, [获取支持商户搜索的最新城市列表](http://developer.dianping.com/app/api/v1/metadata/get_cities_with_businesses)
 
 ## Example
 ```python
